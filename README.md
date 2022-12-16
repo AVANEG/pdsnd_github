@@ -4,14 +4,14 @@
 Include the date you created this project and README file.
 
 ### Project Title
-Replace the Project Title
+Vanegas Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
-
+This python code was created conforn to the project requirements
+- User inputs were implemented 
+- Pandas Dataframe topics were used 
 ### Files used
-Include the files used
+For this project was used CSVs from Chicago, Washington and New York City
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+
 
