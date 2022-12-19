@@ -8,8 +8,7 @@ Vanegas Bikeshare Project
 
 ### Description
 This python code was created conforn to the project requirements
-- User inputs were implemented 
-- Pandas Dataframe topics were used 
+
 ### Files used
 For this project was used CSVs from Chicago, Washington and New York City
 
