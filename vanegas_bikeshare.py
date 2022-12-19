@@ -46,7 +46,7 @@ def get_filters():
     print('*'*80)
     return city, month, day
 
-
+"""
 def load_data(city, month, day):
 
     # load data file into a dataframe
@@ -78,6 +78,34 @@ def load_data(city, month, day):
          print("\nThis is your dataframe after the filter: \n", df.head(5))
     else:
         pass
+    return df
+"""
+
+# Here there is a optimization of this function:
+
+def load_data(city, month, day):
+    # load data file into a dataframe
+    df = pd.read_csv(CITY_DATA[city])
+
+    # create a dictionary to map month and day names to integer values
+    month_map = {'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6}
+    day_map = {'monday': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4, 'friday': 5, 'saturday': 6, 'sunday': 7}
+
+    # convert the Start Time column to datetime and extract month and day of week values
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+    df['month'] = df['Start Time'].dt.month
+    df['day_of_week'] = df['Start Time'].dt.weekday
+
+    # filter by month if applicable
+    if month != 'all':
+        month = month_map[month]
+        df = df[df['month'] == month]
+
+    # filter by day of week if applicable
+    if day != 'all':
+        day = day_map[day]
+        df = df[df['day_of_week'] == day]
+
     return df
 
 
